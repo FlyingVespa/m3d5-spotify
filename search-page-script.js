@@ -10,7 +10,6 @@ const searchButtonFun = () => {
     .catch((error) => alert(error));
 }
 
-
 const loadAlbums = (albums) => {
   const divRow = document.querySelector(".albums");
   albums.forEach((element) => {
@@ -66,35 +65,4 @@ window.onload = () => {
 //       </div>
 //         `;
 //     });
-// }
-
-
-// if ("URLSearchParams" in window) {
-//     //   "https://striveschool-api.herokuapp.com/api/deezer/search?q=queen&q=eminem"
-//     const url = new URL(
-//         "https://striveschool-api.herokuapp.com/api/deezer/search"
-//     );
-//     // console.log("url.searchParams:", url.searchParams);
-
-//     // const params = new URLSearchParams("");
-//     // console.log("params:", params);
-//     // console.log("url.search:", url.search);
-
-//     let inputSearch = "queen hello";
-//     const searchParams = new URLSearchParams("");
-//     searchParams.set("q", inputSearch);
-//     // for (values of searchParams) {
-//     //   console.log("value:", values);
-//     // }
-//     console.log(`${url.href}?${inputSearch}`);
-//     // window.history.replaceState(`${url.href}?${searchParams}`);
-//     // window.history.replaceState({}, "", `${url.href}?${searchParams}`);
-//     const aTag = document.createElement("a")
-//     aTag.href = `${url.href}?${searchParams}`
-//     aTag.innerText = "link"
-//     // console.log('aTag:', aTag)
-//     // console.log(document.querySelector('body'))
-//     document.querySelector('body').appendChild(aTag)
-// } else {
-//     window.alert("Browser doesn't support URLSearchParams");
 // }
