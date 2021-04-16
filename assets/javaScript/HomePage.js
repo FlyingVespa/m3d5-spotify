@@ -1,28 +1,21 @@
+function insertLogo() {
+	let tileTitle = document.querySelectorAll('.tile-title');
 
-function insertLogo(){
-
-
-let tileTitle = document.querySelectorAll('.tile-title')
-
-for(let i=0; i<tileTitle.length;i++){
-    let logoDiv = document.createElement('div')
-    logoDiv.className = 'tile-logo'
-    logoDiv.innerHTML = `<i class="fab fa-spotify logoStyle"></i>`
-    tileTitle[i].parentNode.insertBefore(logoDiv,tileTitle[i])
-    
-}
+	for (let i = 0; i < tileTitle.length; i++) {
+		let logoDiv = document.createElement('div');
+		logoDiv.className = 'tile-logo';
+		logoDiv.innerHTML = `<i class="fab fa-spotify logoStyle"></i>`;
+		tileTitle[i].parentNode.insertBefore(logoDiv, tileTitle[i]);
+	}
 }
 
-
-insertLogo()
-
-
+insertLogo();
 
 //  Get the container element
- var btnContainer = document.getElementById("HomePageNav");
+var btnContainer = document.getElementById('HomePageNav');
 
 // Get all buttons with class="btn" inside the container
-var btns = btnContainer.getElementsByClassName("home-nav-btns");
+var btns = btnContainer.getElementsByClassName('home-nav-btns');
 
 // Loop through the buttons and add the active class to the current/clicked button
 /* for (var i = 0; i < btns.length; i++) {
@@ -47,37 +40,33 @@ for(let i=0; i<tileTitle.length;i++){
 }
 } */
 
-function insertPlayIcon(){
-
-let albumImages = document.getElementsByClassName('rounded')
-for(let i=0; i<albumImages.length;i++){
-    let iconDiv = document.createElement('div')
-    iconDiv.className = 'newPlay'
-    iconDiv.innerHTML = `<i class="fas fa-play-circle"></i>`
-    albumImages[i].after(iconDiv)
+function insertPlayIcon() {
+	let albumImages = document.getElementsByClassName('rounded');
+	for (let i = 0; i < albumImages.length; i++) {
+		let iconDiv = document.createElement('div');
+		iconDiv.className = 'newPlay';
+		iconDiv.innerHTML = `<i class="fas fa-play-circle"></i>`;
+		albumImages[i].after(iconDiv);
+	}
 }
-}
-insertPlayIcon()
+insertPlayIcon();
 
-
-function HomePage(){
-  location.replace("HomePage.html")
+function HomePage() {
+	location.replace('HomePage.html');
 }
 
-function Podcast(){
-  location.replace("Podcast.html")
+function Podcast() {
+	location.replace('Podcast.html');
 }
 
-function Genres(){
-  location.replace("Genres.html")
+function Genres() {
+	location.replace('Genres.html');
 }
 
-function Newreleases(){
-  location.replace("NewReleases.html")
+function Newreleases() {
+	location.replace('NewReleases.html');
 }
 
-function Discover(){
-  location.replace("Discover.html")
+function Discover() {
+	location.replace('Discover.html');
 }
-
-
