@@ -1,5 +1,10 @@
 window.onload = () => {
-	fetch('https://striveschool-api.herokuapp.com/api/deezer/album/75621062', {
+	let SearchParams = new URLSearchParams(location.search);
+	var id = SearchParams.get("id")
+	if (!id) {
+		id = 75621062 // Bohemian Rhapsody (Queen)
+	}
+	fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/${id}`, {
 		method: 'GET',
 	})
 		.then((response) => response.json())
