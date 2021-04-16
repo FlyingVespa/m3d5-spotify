@@ -38,9 +38,9 @@ const loadAlbums = (albums) => {
 
 window.onload = () => {
   // console.log('albums:', albums)
-  // console.log('location:', location)
-  // console.log(`${location.origin}${location.pathname}`)
-  console.log(`${location.origin}`)
+  console.log('location:', location)
+  console.log(`location.origin & location.pathname: ${location.origin}${location.pathname}`)
+  console.log(`location.origin: ${location.origin}`)
   // console.log('location.href:', location.href)
   document.getElementById('search-input').addEventListener('keypress', function (e) {
     if (e.key === 'Enter') {
