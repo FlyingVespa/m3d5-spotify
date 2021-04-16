@@ -17,7 +17,7 @@ const loadAlbums = (albums) => {
         
         <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
           <div class="card mb-4">
-          <a href="${location.origin}/HomePage.html?id=${element.album.id}" class="text-center">
+          <a href="${location.origin}/albumpage.html?id=${element.album.id}" class="text-center">
             <img
               src="${element.album.cover}"
               alt="${element.album.id}"
