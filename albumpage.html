@@ -54,18 +54,18 @@
 window.onload = () => {
 
   fetch("https://striveschool-api.herokuapp.com/api/deezer/album/75621062")
-  .then((resp) => resp.json)
+  .then((resp) => resp.json())
   .then((tracks) =>  console.log(tracks));
    
+  tracks.data.title
   
   const ul = document.querySelector("ul");
   tracks.forEach((track) => {
-    let li 
-    li.innerHTML = `
-    <li><span class="fa-li"><i class="fas fa-music"></i></span></i>She Loves You</li>
+    const li = document.createElement("li")
+    li.innerHTML= `
+      <li><span class="fa-li"><i class="fas fa-music"></i></span></i>${track}</li>
             <li>Beatles</li>
             `;
-
     ul.appendChild(li);
   });
 
