@@ -2,22 +2,19 @@ const searchButtonFun = () => {
   const divRow = document.querySelector(".albums");
   divRow.innerHTML = ""
   const searchInput = document.getElementById("search-input").value
-  console.log('searchInput:', searchInput)
-  console.log(`https://striveschool-api.herokuapp.com/api/deezer/search?q=${searchInput}`);
   const myfetch = fetch(`https://striveschool-api.herokuapp.com/api/deezer/search?q=${searchInput}`)
     .then((res) => res.json())
     .then((data) => loadAlbums(data.data))
     .catch((error) => alert(error));
 }
 
-const loadAlbums = (albums) => {
+const loadAlbums = (newData) => {
   const divRow = document.querySelector(".albums");
-  albums.forEach((element) => {
+  newData.forEach((element) => {
     divRow.innerHTML += `
-        
         <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
           <div class="card mb-4">
-          <a href="${location.origin}/album_page.html?id=${element.album.id}" class="text-center">
+          <a href="${rootLink}/album_page.html?id=${element.album.id}" class="text-center">
             <img
               src="${element.album.cover}"
               alt="${element.album.id}"
@@ -27,20 +24,19 @@ const loadAlbums = (albums) => {
               <p class="card-text text-center">
               ${element.album.title}
               </p>
-              <p class="card-text text-center card-artist"><a href="${location.origin}/artist.html?id=${element.artist.id}">${element.artist.name}</a></p>
+              <p class="card-text text-center card-artist"><a href="${rootLink}/artist.html?id=${element.artist.id}">${element.artist.name}</a></p>
             </div>
           </div>
         </div>
-        
       `;
   });
 }
 
 window.onload = () => {
-  // console.log('albums:', albums)
-  console.log('location:', location)
-  console.log(`location.origin & location.pathname: ${location.origin}${location.pathname}`)
-  console.log(`location.origin: ${location.origin}`)
+
+  let rootLink = location.href.replace('search.html', '');
+  // console.log('rootLink:', rootLink)
+  // console.log('location:', location)
   // console.log('location.href:', location.href)
   document.getElementById('search-input').addEventListener('keypress', function (e) {
     if (e.key === 'Enter') {
