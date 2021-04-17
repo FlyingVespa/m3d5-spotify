@@ -14,7 +14,7 @@ const loadAlbums = (newData) => {
     divRow.innerHTML += `
         <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
           <div class="card mb-4">
-          <a href="${rootLink}/album_page.html?id=${element.album.id}" class="text-center">
+          <a href="${location.href.replace('search.html', '')}/album_page.html?id=${element.album.id}" class="text-center">
             <img
               src="${element.album.cover}"
               alt="${element.album.id}"
@@ -24,7 +24,7 @@ const loadAlbums = (newData) => {
               <p class="card-text text-center">
               ${element.album.title}
               </p>
-              <p class="card-text text-center card-artist"><a href="${rootLink}/artist.html?id=${element.artist.id}">${element.artist.name}</a></p>
+              <p class="card-text text-center card-artist"><a href="${location.href.replace('search.html', '')}/artist.html?id=${element.artist.id}">${element.artist.name}</a></p>
             </div>
           </div>
         </div>
@@ -33,8 +33,7 @@ const loadAlbums = (newData) => {
 }
 
 window.onload = () => {
-
-  let rootLink = location.href.replace('search.html', '');
+  // let rootLink = location.href.replace('search.html', '');
   // console.log('rootLink:', rootLink)
   // console.log('location:', location)
   // console.log('location.href:', location.href)
@@ -44,7 +43,6 @@ window.onload = () => {
     }
   });
 }
-
 
 // const loadSongs = (songs) => {
 //     console.log('songs:', songs)
