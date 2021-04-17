@@ -9,7 +9,7 @@ window.onload = () => {
 	})
 		.then((response) => response.json())
 		.then((data) => {
-			console.log(data);
+			// console.log(data);
 			loadCoverImage(data);
 			loadTitle(data);
 			loadArtistName(data);
